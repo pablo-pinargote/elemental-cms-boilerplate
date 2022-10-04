@@ -1,0 +1,66 @@
+{
+  "application": {
+    "id": "<app-id>",
+    "name": "App Name",
+    "description": "App description",
+    "tags": [
+      "python",
+      "cms",
+      "cloud-run",
+      "flask",
+      "mongodb"
+    ],
+    "httpHealthCheck": {
+      "portNumber": 0,
+      "url": "/"
+    }
+  },
+  "cmsCoreContext": {
+    "DEBUG": true,
+    "ENV": "development",
+    "SECRET": "[_[SITE_SECRET]_]",
+    "SITE_NAME": "Site Name",
+    "GOOGLE_SITE_VERIFICATION_TOKEN": "",
+    "COMPANY": "Company Name",
+    "CANONICAL_URL": "https://canonical.url",
+    "LANGUAGES": [
+      "en",
+      "es"
+    ],
+    "DEFAULT_LANGUAGE": "en",
+    "LANGUAGE_MODE": "multi",
+    "APP_NAME": "app",
+    "STATIC_FOLDER": "static",
+    "MEDIA_FOLDER": "media",
+    "STATIC_BUCKET": "elemental-<app-id>-static",
+    "MEDIA_BUCKET": "elemental-<app-id>-media",
+    "STATIC_URL": "https://storage.googleapis.com/elemental-<app-id>-static",
+    "MEDIA_URL": "https://storage.googleapis.com/elemental-<app-id>-media",
+    "GLOBAL_DEPS_FOLDER": "workspace/global_deps",
+    "PAGES_FOLDER": "workspace/pages",
+    "SNIPPETS_FOLDER": "workspace/snippets",
+    "GOOGLE_ACCOUNT_SERVICE_INFO": {
+      "type": "service_account",
+      "project_id": "<project_id>",
+      "private_key_id": "<private_key_id>",
+      "private_key": "<private_key>",
+      "client_email": "<client_email>",
+      "client_id": "<client_id>",
+      "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+      "token_uri": "https://oauth2.googleapis.com/token",
+      "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+      "client_x509_cert_url": "<client_x509_cert_url>"
+    },
+    "USER_IDENTITY_SESSION_KEY": "userIdentity",
+    "SESSION_STORAGE_ENABLED": true,
+    "SESSION_TIMEOUT_IN_MINUTES": 360
+  },
+  "cmsDbContext": {
+    "id": "mongodb-id",
+    "hostName": "[_[MONGODB_HOST]_]",
+    "portNumber": [_[MONGODB_PORT]_],
+    "databaseName": "elemental_<app_id>",
+    "username": "[_[MONGODB_USERNAME]_]",
+    "password": "[_[MONGODB_PWD]_]"
+  }
+}

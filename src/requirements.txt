@@ -1,3 +1,3 @@
 gunicorn==20.1.0
-elemental-cms==1.1.12
+elemental-cms==1.1.14
 pip-chill==1.0.1

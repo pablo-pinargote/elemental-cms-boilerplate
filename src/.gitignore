@@ -1,3 +1,5 @@
-settings
+# At regular repo (not a boilerplate you must be careful to not share settings with credentials on it).
+# At regular repo uncomment the next line
+# settings
 media
 **/.bak
