@@ -1,0 +1,28 @@
+trigger:
+  branches:
+    include:
+    - refs/heads/main
+  paths:
+    include:
+    - elemental/.build
+    - elemental/.deploy
+    - elemental/src
+name: $(Date:yyyyMMdd)$(Rev:.r)
+jobs:
+- job: DeafultBuildJob
+  displayName: 'Default Build Job'
+  pool:
+    name: Paranoid
+  steps:
+  - checkout: self
+    clean: true
+  - script: |
+      gcloud config set project <project-id>
+      gcloud builds submit --tag gcr.io/<project-id>/<docker-image>:$(Build.BuildNumber) --timeout=1h00m0s
+    displayName: 'Docker Image Building'
+    workingDirectory: elemental/src/
+  - task: PublishPipelineArtifact@1
+    displayName: 'Deployment Artifacts Publishing'
+    inputs:
+      path: elemental/.deploy
+      artifactName: deploy
