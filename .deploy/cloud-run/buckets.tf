@@ -36,16 +36,16 @@ resource "google_storage_bucket" "media" {
   }
 }
 
-resource "google_storage_bucket_access_control" "static_public_rule" {
+resource "google_storage_bucket_iam_member" "static_public_rule" {
   bucket = google_storage_bucket.static.name
-  role = "READER"
-  entity = "allUsers"
+  role = "roles/storage.objectViewer"
+  member = "allUsers"
 }
 
-resource "google_storage_bucket_access_control" "media_public_rule" {
+resource "google_storage_bucket_iam_member" "media_public_rule" {
   bucket = google_storage_bucket.media.name
-  role = "READER"
-  entity = "allUsers"
+  role = "roles/storage.objectViewer"
+  member = "allUsers"
 }
 
 resource "google_storage_bucket_iam_member" "static_admin_rule" {
