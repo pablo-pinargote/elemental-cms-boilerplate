@@ -13,5 +13,5 @@ resource "google_secret_manager_secret" "default_settings" {
 
 resource "google_secret_manager_secret_version" "default_settings_version" {
   secret = google_secret_manager_secret.default_settings.id
-  secret_data = file("../default.settings.json")
+  secret_data = file("default.settings.json")
 }

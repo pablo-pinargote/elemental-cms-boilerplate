@@ -42,20 +42,20 @@ resource "google_storage_bucket_iam_member" "static_public_rule" {
   member = "allUsers"
 }
 
+resource "google_storage_bucket_iam_member" "static_admin_rule" {
+  bucket = google_storage_bucket.static.name
+  role = "roles/storage.admin"
+  member = "serviceAccount:${var.buckets_admin_service_account}"
+}
+
 resource "google_storage_bucket_iam_member" "media_public_rule" {
   bucket = google_storage_bucket.media.name
   role = "roles/storage.objectViewer"
   member = "allUsers"
 }
 
-resource "google_storage_bucket_iam_member" "static_admin_rule" {
-  bucket = google_storage_bucket.static.name
-  role = "roles/storage.admin"
-  member = var.buckets_admin_service_account
-}
-
 resource "google_storage_bucket_iam_member" "media_admin_rule" {
   bucket = google_storage_bucket.media.name
   role = "roles/storage.admin"
-  member = var.buckets_admin_service_account
+  member = "serviceAccount:${var.buckets_admin_service_account}"
 }
