@@ -18,7 +18,7 @@ jobs:
     clean: true
   - script: |
       gcloud config set project <project-id>
-      gcloud builds submit --tag gcr.io/<project-id>/<docker-image>:$(Build.BuildNumber) --timeout=1h00m0s
+      gcloud builds submit --tag <region>-docker.pkg.dev/<project-id>/<repo-id>/<docker-image>:$(Build.BuildNumber) --timeout=1h00m0s
     displayName: 'Docker Image Building'
     workingDirectory: elemental/src/
   - task: PublishPipelineArtifact@1

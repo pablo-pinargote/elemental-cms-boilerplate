@@ -1,31 +1,18 @@
-class QueryString {
+export class QueryString {
 
     constructor() {
-        let self = this;
-        self.map = {};
-        window.location.search.substring(1).split('&').forEach(function (queryValuePair) {
-            let parts = queryValuePair.split('=');
-            if (parts.length !== 2) return;
-            self.map[parts[0].toString()] = parts[1].toString();
-        });
-    };
+    }
 
     get() {
         return window.location.search.substring(1);
     }
 
     getValue(name, defaultValue=undefined) {
-        let self = this;
-        if (name in self.map) return self.map[name];
-        if (defaultValue === undefined) return defaultValue;
-        return defaultValue;
+        return new URL(window.location).searchParams.get(name) || defaultValue;
     };
 
     hasParam(name) {
-        return name in this.map;
+        return Array.from(new URL(window.location).searchParams.keys()).includes(name);
     }
 
 }
-
-let queryString = new QueryString();
-export {queryString};

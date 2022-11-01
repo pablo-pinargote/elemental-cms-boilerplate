@@ -48,6 +48,7 @@
     "hostName": "[_[MONGODB_HOST]_]",
     "portNumber": [_[MONGODB_PORT]_],
     "databaseName": "elemental_<app_id>",
+    "authSource": "[_[MONGODB_AUTH_SOURCE_DB]_]",
     "username": "[_[MONGODB_USERNAME]_]",
     "password": "[_[MONGODB_PWD]_]"
   }
