@@ -1,0 +1,39 @@
+{
+  "cmsCoreContext": {
+    "DEBUG": true,
+    "ENV": "development",
+    "SECRET": "[_[SITE_SECRET]_]",
+    "SITE_NAME": "Site Name",
+    "COMPANY": "Company Name",
+    "CANONICAL_URL": "https://canonical.url",
+    "LANGUAGES": [
+      "en",
+      "es"
+    ],
+    "DEFAULT_LANGUAGE": "en",
+    "LANGUAGE_MODE": "multi",
+    "APP_NAME": "app",
+    "STATIC_FOLDER": "static",
+    "MEDIA_FOLDER": "media",
+    "STATIC_URL": "/static",
+    "MEDIA_URL": "/media",
+    "STATIC_BUCKET": "elemental-<app-id>-static",
+    "MEDIA_BUCKET": "elemental-<app-id>-media",
+    "GLOBAL_DEPS_FOLDER": "workspace/global_deps",
+    "PAGES_FOLDER": "workspace/pages",
+    "SNIPPETS_FOLDER": "workspace/snippets",
+    "USER_IDENTITY_SESSION_KEY": "userIdentity",
+    "SESSION_STORAGE_ENABLED": false,
+    "SESSION_TIMEOUT_IN_MINUTES": 20
+  },
+  "cmsDbContext": {
+    "id": "mongodb-id",
+    "hostName": "[_[MONGODB_HOST]_]",
+    "portNumber": [_[MONGODB_PORT]_],
+    "databaseName": "elemental_<app_id>",
+    "authSource": "[_[MONGODB_AUTH_SOURCE_DB]_]",
+    "username": "[_[MONGODB_USERNAME]_]",
+    "password": "[_[MONGODB_PWD]_]",
+    "directConnection": true
+  }
+}

@@ -16,7 +16,7 @@ with open(CONFIG_FILEPATH) as config_file:
     cms_db_context = MongoDbContext(settings['cmsDbContext'])
     elemental_context = ElementalContext(cms_core_context, cms_db_context)
 
-www = create_app(elemental_context)
+www, containers = create_app(elemental_context)
 
 
 @www.errorhandler(404)
