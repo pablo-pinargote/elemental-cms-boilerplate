@@ -62,6 +62,7 @@
     "databaseName": "elemental_<app_id>",
     "authSource": "[_[MONGODB_AUTH_SOURCE_DB]_]",
     "username": "[_[MONGODB_USERNAME]_]",
-    "password": "[_[MONGODB_PWD]_]"
+    "password": "[_[MONGODB_PWD]_]",
+    "directConnection": true
   }
 }
