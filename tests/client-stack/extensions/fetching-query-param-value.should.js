@@ -24,4 +24,10 @@ describe('Fetching query param value', () => {
         expect(result).toBe('');
     });
 
+    it('should be equal to yes', () => {
+        window.history.replaceState({}, 'Testing query string', '?test=yes');
+        let result = new QueryString().getValue('test');
+        expect(result).toBe('yes');
+    });
+
 });
