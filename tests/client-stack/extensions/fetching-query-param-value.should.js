@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  **/
 
-import {QueryString} from "../../../src/static/app/client-stack/extensions/window.js";
+import {QueryString} from "../../../src/static/shared/client-stack/extensions/window.js";
 
 describe('Fetching query param value', () => {
 
@@ -22,6 +22,12 @@ describe('Fetching query param value', () => {
         window.history.replaceState({}, 'Testing query string', '?test=yes');
         let result = new QueryString().getValue('name', '');
         expect(result).toBe('');
+    });
+
+    it('should be equal to yes', () => {
+        window.history.replaceState({}, 'Testing query string', '?test=yes');
+        let result = new QueryString().getValue('test');
+        expect(result).toBe('yes');
     });
 
 });

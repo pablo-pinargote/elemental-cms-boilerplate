@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  **/
 
-import {QueryString} from '../../../src/static/app/client-stack/extensions/window.js';
+import {QueryString} from '../../../src/static/shared/client-stack/extensions/window.js';
 
 describe('Verifiyng query string param existence', () => {
 

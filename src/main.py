@@ -1,9 +1,10 @@
 import json
 import os
 
+import requests
 from elementalcms import ElementalContext
 from elementalcms.core import FlaskContext, MongoDbContext
-from flask import render_template, send_from_directory
+from flask import render_template, send_from_directory, make_response
 
 from __init__ import create_app
 
@@ -32,6 +33,29 @@ def internal_error(e):
 @www.route('/robots.txt')
 def robots():
     return send_from_directory(www.template_folder, 'robots.txt')
+
+
+@www.route('/progressive/manifest.json')
+def get_drive_app_manifest():
+    if 'http' in elemental_context.cms_core_context.STATIC_URL:
+        response = requests.get(f'{elemental_context.cms_core_context.STATIC_URL}/apps/progressive/pwa/manifest.json', timeout=30)
+        return response.text, response.status_code, response.headers.items()
+    response = make_response(
+        send_from_directory('static/apps/progressive/pwa', 'manifest.json'))
+    return response
+
+
+@www.route('/progressive/sw.js')
+def get_drive_app_service_worker():
+    if 'http' in elemental_context.cms_core_context.STATIC_URL:
+        response = requests.get(f'{elemental_context.cms_core_context.STATIC_URL}/apps/progressive/pwa/sw.js', timeout=30)
+        return response.text, response.status_code, response.headers.items()
+
+    response = make_response(
+        send_from_directory('static/apps/progressive/pwa', 'sw.js'))
+    # change the content header file. Can also omit; flask will handle correctly.
+    response.headers['Content-Type'] = 'application/javascript'
+    return response
 
 
 if __name__ == '__main__':
