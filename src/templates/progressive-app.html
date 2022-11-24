@@ -15,6 +15,9 @@
 
     <link rel="canonical" href="{{ config['CANONICAL_URL'] }}">
 
+    <!--suppress HtmlUnknownTarget -->
+    <link rel="manifest" href="/progressive/manifest.json">
+
     <link rel="shortcut icon" type="image/png" href="{{ elemental_url_for_static('shared/icons/favicon.ico') }}"/>
     <link rel="icon" type="image/png" sizes="32x32" href="{{ elemental_url_for_static('shared/icons/favicon-32x32.png') }}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ elemental_url_for_static('shared/icons/favicon-16x16.png') }}">
@@ -28,6 +31,8 @@
 
     {% block content %}{% endblock %}
     {% block scripts %}{% endblock %}
+
+    <script type="application/javascript" src="{{ elemental_url_for_static('apps/progressive/pwa/init.js') }}"></script>
 
 </body>
 </html>

@@ -1,7 +1,7 @@
 FROM python:3.7-buster
 
 RUN apt-get install bash
-RUN mkdir -p /usr/app/src
+RUN mkdir -p /usr/default/src
 
 WORKDIR /usr/app/src
 
