@@ -12,7 +12,7 @@
     ],
     "DEFAULT_LANGUAGE": "en",
     "LANGUAGE_MODE": "multi",
-    "APP_NAME": "app",
+    "APP_NAME": "apps",
     "STATIC_FOLDER": "static",
     "MEDIA_FOLDER": "media",
     "STATIC_URL": "/static",
