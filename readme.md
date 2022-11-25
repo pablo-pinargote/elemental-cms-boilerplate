@@ -39,7 +39,7 @@ This project can serve more than one PWA, to activate any specific page as such 
         return response
     ```
 
-3. Add a new template to include and serve the intended manifest.json file via meta tag and init.js script via its corresponding script tag
+3. Add a new template to include and serve the intended manifest.json file via meta tag and init script via its corresponding script tag
 
    ```html
    <html>
@@ -54,7 +54,22 @@ This project can serve more than one PWA, to activate any specific page as such 
        <link rel="shortcut icon" type="image/png" href="{{ elemental_url_for_static('shared/icons/favicon.ico') }}"/>
    </head>   
    <body>
-      <script type="application/javascript" src="{{ elemental_url_for_static('apps/progressive/pwa/init.js') }}"></script>
+    <script type="application/javascript">
+       window.addEventListener('load', function () {
+   
+           if (!('serviceWorker' in navigator)) {
+               console.log('Service Worker not supported !');
+               return;
+           }
+   
+           navigator.serviceWorker.register('/progressive/sw.js').then(function (registration) {
+               console.log(`Service Worker registration with ${registration.scope} scope successful`);
+           }, function (err) {
+               console.log(`Service Worker registration failed with error: ${err}`);
+           });
+   
+       });
+    </script>
    </body>
    ```
 

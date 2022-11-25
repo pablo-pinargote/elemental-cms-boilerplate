@@ -29,7 +29,6 @@
     ],
     "DEFAULT_LANGUAGE": "en",
     "LANGUAGE_MODE": "multi",
-    "APP_NAME": "app",
     "STATIC_FOLDER": "static",
     "MEDIA_FOLDER": "media",
     "STATIC_BUCKET": "elemental-<app-id>-static",
