@@ -2,8 +2,9 @@
   "cmsCoreContext": {
     "DEBUG": true,
     "ENV": "development",
-    "SECRET": "[_[SITE_SECRET]_]",
+    "SECRET": "<SITE-SECRET>",
     "SITE_NAME": "Site Name",
+    "GOOGLE_SITE_VERIFICATION_TOKEN": "",
     "COMPANY": "Company Name",
     "CANONICAL_URL": "https://canonical.url",
     "LANGUAGES": [
@@ -12,13 +13,10 @@
     ],
     "DEFAULT_LANGUAGE": "en",
     "LANGUAGE_MODE": "multi",
-    "APP_NAME": "apps",
     "STATIC_FOLDER": "static",
     "MEDIA_FOLDER": "media",
     "STATIC_URL": "/static",
     "MEDIA_URL": "/media",
-    "STATIC_BUCKET": "elemental-<app-id>-static",
-    "MEDIA_BUCKET": "elemental-<app-id>-media",
     "GLOBAL_DEPS_FOLDER": "workspace/global_deps",
     "PAGES_FOLDER": "workspace/pages",
     "SNIPPETS_FOLDER": "workspace/snippets",
@@ -28,12 +26,12 @@
   },
   "cmsDbContext": {
     "id": "mongodb-id",
-    "hostName": "[_[MONGODB_HOST]_]",
-    "portNumber": [_[MONGODB_PORT]_],
+    "hostName": "localhost",
+    "portNumber": 27017,
     "databaseName": "elemental_<app_id>",
-    "authSource": "[_[MONGODB_AUTH_SOURCE_DB]_]",
-    "username": "[_[MONGODB_USERNAME]_]",
-    "password": "[_[MONGODB_PWD]_]",
+    "authSource": "<MONGODB_AUTH_SOURCE_DB>",
+    "username": "<MONGODB_USERNAME>",
+    "password": "<MONGODB_PWD>",
     "directConnection": true
   }
 }

@@ -1,24 +1,8 @@
 {
-  "application": {
-    "id": "<app-id>",
-    "name": "App Name",
-    "description": "App description",
-    "tags": [
-      "python",
-      "cms",
-      "cloud-run",
-      "flask",
-      "mongodb"
-    ],
-    "httpHealthCheck": {
-      "portNumber": 0,
-      "url": "/"
-    }
-  },
   "cmsCoreContext": {
     "DEBUG": true,
     "ENV": "development",
-    "SECRET": "[_[SITE_SECRET]_]",
+    "SECRET": "<SITE-SECRET>",
     "SITE_NAME": "Site Name",
     "GOOGLE_SITE_VERIFICATION_TOKEN": "",
     "COMPANY": "Company Name",
@@ -31,10 +15,10 @@
     "LANGUAGE_MODE": "multi",
     "STATIC_FOLDER": "static",
     "MEDIA_FOLDER": "media",
-    "STATIC_BUCKET": "elemental-<app-id>-static",
-    "MEDIA_BUCKET": "elemental-<app-id>-media",
     "STATIC_URL": "https://storage.googleapis.com/elemental-<app-id>-static",
     "MEDIA_URL": "https://storage.googleapis.com/elemental-<app-id>-media",
+    "STATIC_BUCKET": "elemental-<app-id>-static",
+    "MEDIA_BUCKET": "elemental-<app-id>-media",
     "GLOBAL_DEPS_FOLDER": "workspace/global_deps",
     "PAGES_FOLDER": "workspace/pages",
     "SNIPPETS_FOLDER": "workspace/snippets",
@@ -56,12 +40,12 @@
   },
   "cmsDbContext": {
     "id": "mongodb-id",
-    "hostName": "[_[MONGODB_HOST]_]",
-    "portNumber": [_[MONGODB_PORT]_],
+    "hostName": "localhost",
+    "portNumber": 27017,
     "databaseName": "elemental_<app_id>",
-    "authSource": "[_[MONGODB_AUTH_SOURCE_DB]_]",
-    "username": "[_[MONGODB_USERNAME]_]",
-    "password": "[_[MONGODB_PWD]_]",
+    "authSource": "<MONGODB_AUTH_SOURCE_DB>",
+    "username": "<MONGODB_USERNAME>",
+    "password": "<MONGODB_PWD>",
     "directConnection": true
   }
 }

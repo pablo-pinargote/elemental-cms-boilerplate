@@ -17,6 +17,24 @@ jobs:
   - checkout: self
     clean: true
   - script: |
+      echo "##vso[task.setvariable variable=BUILD_NUMBER]$(Build.BuildNumber)"
+    displayName: 'Setting up BUILD_NUMBER variable'
+  - task: replacetokens@5
+    displayName: 'Writing up current build number'
+    inputs:
+      rootDirectory: 'elemental/src/templates'
+      targetFiles: '**/*.html'
+      encoding: 'auto'
+      tokenPattern: 'default'
+      writeBOM: true
+      actionOnMissing: 'warn'
+      keepToken: false
+      actionOnNoFiles: 'continue'
+      enableTransforms: false
+      enableRecursion: false
+      useLegacyPattern: false
+      enableTelemetry: true
+  - script: |
       gcloud config set project <project-id>
       gcloud builds submit --tag <region>-docker.pkg.dev/<project-id>/<repo-id>/<docker-image>:$(Build.BuildNumber) --timeout=1h00m0s
     displayName: 'Docker Image Building'
