@@ -32,7 +32,22 @@
     {% block content %}{% endblock %}
     {% block scripts %}{% endblock %}
 
-    <script type="application/javascript" src="{{ elemental_url_for_static('apps/progressive/pwa/init.js') }}"></script>
+    <script type="application/javascript">
+        window.addEventListener('load', function () {
+
+            if (!('serviceWorker' in navigator)) {
+                console.log('Service Worker not supported !');
+                return;
+            }
+
+            navigator.serviceWorker.register('/progressive/sw.js').then(function (registration) {
+                console.log(`Service Worker registration with ${registration.scope} scope successful`);
+            }, function (err) {
+                console.log(`Service Worker registration failed with error: ${err}`);
+            });
+
+        });
+    </script>
 
 </body>
 </html>
