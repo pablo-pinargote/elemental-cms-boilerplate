@@ -1,0 +1,7 @@
+project_id = "<project-id>"
+region = "<region>"
+zone = "<zone>"
+buckets_admin_service_account = "<app-id>-buckets-admin@<project-id>.iam.gserviceaccount.com"
+buckets_location = "<REGION>"
+image_version = "$(Build.BuildNumber)"
+vpc_connector_name = "<vpc-connector-name>"
