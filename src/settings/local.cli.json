@@ -22,7 +22,7 @@
     "GLOBAL_DEPS_FOLDER": "workspace/global_deps",
     "PAGES_FOLDER": "workspace/pages",
     "SNIPPETS_FOLDER": "workspace/snippets",
-    "GOOGLE_ACCOUNT_SERVICE_INFO": {
+    "GOOGLE_SERVICE_ACCOUNT_INFO": {
       "type": "service_account",
       "project_id": "<project_id>",
       "private_key_id": "<private_key_id>",
@@ -40,12 +40,7 @@
   },
   "cmsDbContext": {
     "id": "mongodb-id",
-    "hostName": "localhost",
-    "portNumber": 27017,
-    "databaseName": "elemental_<app_id>",
-    "authSource": "<MONGODB_AUTH_SOURCE_DB>",
-    "username": "<MONGODB_USERNAME>",
-    "password": "<MONGODB_PWD>",
-    "directConnection": true
+    "connectionString": "mongodb://<MONGODB_USERNAME>:<MONGODB_PWD>@localhost:27017/<MONGODB_AUTH_SOURCE_DB>?directConnection=true",
+    "databaseName": "elemental_<app_id>"
   }
 }

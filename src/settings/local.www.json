@@ -22,16 +22,12 @@
     "SNIPPETS_FOLDER": "workspace/snippets",
     "USER_IDENTITY_SESSION_KEY": "userIdentity",
     "SESSION_STORAGE_ENABLED": true,
-    "SESSION_TIMEOUT_IN_MINUTES": 360
+    "SESSION_TIMEOUT_IN_MINUTES": 360,
+    "DESIGN_MODE_ENABLED": true
   },
   "cmsDbContext": {
     "id": "mongodb-id",
-    "hostName": "localhost",
-    "portNumber": 27017,
-    "databaseName": "elemental_<app_id>",
-    "authSource": "<MONGODB_AUTH_SOURCE_DB>",
-    "username": "<MONGODB_USERNAME>",
-    "password": "<MONGODB_PWD>",
-    "directConnection": true
+    "connectionString": "mongodb://<MONGODB_USERNAME>:<MONGODB_PWD>@localhost:27017/<MONGODB_AUTH_SOURCE_DB>?directConnection=true",
+    "databaseName": "elemental_<app_id>"
   }
 }
