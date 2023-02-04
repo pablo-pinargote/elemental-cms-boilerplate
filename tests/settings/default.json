@@ -26,12 +26,7 @@
   },
   "cmsDbContext": {
     "id": "mongodb-id",
-    "hostName": "localhost",
-    "portNumber": 27017,
-    "databaseName": "elemental_<app_id>",
-    "authSource": "<MONGODB_AUTH_SOURCE_DB>",
-    "username": "<MONGODB_USERNAME>",
-    "password": "<MONGODB_PWD>",
-    "directConnection": true
+    "connectionString": "mongodb://<MONGODB_USERNAME>:<MONGODB_PWD>@localhost:27017/<MONGODB_AUTH_SOURCE_DB>?directConnection=true",
+    "databaseName": "elemental_<app_id>"
   }
 }

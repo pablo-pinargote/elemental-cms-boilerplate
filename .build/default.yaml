@@ -22,7 +22,7 @@ jobs:
   - task: replacetokens@5
     displayName: 'Writing up current build number'
     inputs:
-      rootDirectory: 'elemental/src/templates'
+      rootDirectory: 'src/templates'
       targetFiles: '**/*.html'
       encoding: 'auto'
       tokenPattern: 'default'
@@ -38,9 +38,9 @@ jobs:
       gcloud config set project <project-id>
       gcloud builds submit --tag <region>-docker.pkg.dev/<project-id>/<repo-id>/<docker-image>:$(Build.BuildNumber) --timeout=1h00m0s
     displayName: 'Docker Image Building'
-    workingDirectory: elemental/src/
+    workingDirectory: src/
   - task: PublishPipelineArtifact@1
     displayName: 'Deployment Artifacts Publishing'
     inputs:
-      path: elemental/.deploy
+      path: .deploy
       artifactName: deploy

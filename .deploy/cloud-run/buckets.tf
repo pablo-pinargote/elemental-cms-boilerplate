@@ -8,7 +8,7 @@ resource "google_storage_bucket" "static" {
 
   force_destroy = false
   location = var.buckets_location
-  name = "elemental-<app-id>-static"
+  name = var.static_bucket_name
   project = var.project_id
   storage_class = "STANDARD"
   labels = {
@@ -27,7 +27,7 @@ resource "google_storage_bucket" "media" {
 
   force_destroy = false
   location = var.buckets_location
-  name = "elemental-<app-id>-media"
+  name = var.media_bucket_name
   project = var.project_id
   storage_class = "STANDARD"
   labels = {
