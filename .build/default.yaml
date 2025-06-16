@@ -4,9 +4,9 @@ trigger:
     - refs/heads/main
   paths:
     include:
-    - elemental/.build
-    - elemental/.deploy
-    - elemental/src
+    - .build
+    - .deploy
+    - src
 name: $(Date:yyyyMMdd)$(Rev:.r)
 jobs:
 - job: DeafultBuildJob

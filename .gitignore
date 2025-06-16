@@ -4,4 +4,5 @@
 **/.pytest_cache
 node_modules
 coverage
-codiga.yml
+# src/settings
+**/geckodriver.log
