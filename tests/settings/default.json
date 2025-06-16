@@ -2,11 +2,11 @@
   "cmsCoreContext": {
     "DEBUG": true,
     "ENV": "development",
-    "SECRET": "<SITE-SECRET>",
-    "SITE_NAME": "Site Name",
+    "SECRET": "my-super-secret-key",
+    "SITE_NAME": "My Testing Env",
     "GOOGLE_SITE_VERIFICATION_TOKEN": "",
-    "COMPANY": "Company Name",
-    "CANONICAL_URL": "https://canonical.url",
+    "COMPANY": "ACME",
+    "CANONICAL_URL": "https://acme.org",
     "LANGUAGES": [
       "en",
       "es"
@@ -22,7 +22,7 @@
     "SNIPPETS_FOLDER": "workspace/snippets",
     "USER_IDENTITY_SESSION_KEY": "userIdentity",
     "SESSION_STORAGE_ENABLED": false,
-    "SESSION_TIMEOUT_IN_MINUTES": 20
+    "SESSION_TIMEOUT_IN_MINUTES": 10
   },
   "cmsDbContext": {
     "id": "mongodb-id",

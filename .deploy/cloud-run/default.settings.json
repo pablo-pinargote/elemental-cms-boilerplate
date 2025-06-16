@@ -26,12 +26,7 @@
   },
   "cmsDbContext": {
     "id": "mongodb-id",
-    "hostName": "<MONGODB_HOST>",
-    "portNumber": <MONGODB_PORT>,
-    "databaseName": "elemental_<app_id>",
-    "authSource": "<MONGODB_AUTH_SOURCE_DB>",
-    "username": "<MONGODB_USERNAME>",
-    "password": "<MONGODB_PWD>",
-    "directConnection": true
+    "connectionString": "mongodb://<MONGODB_USERNAME>:<MONGODB_PWD>@<MONGODB_HOST>:<MONGODB_PORT>/<MONGODB_AUTH_SOURCE_DB>?directConnection=true",
+    "databaseName": "elemental_<app_id>"
   }
 }

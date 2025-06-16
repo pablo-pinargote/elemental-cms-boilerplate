@@ -12,6 +12,6 @@ def default_settings():
 
 
 @pytest.fixture
-def default_elemental_context(default_settings):
-    return ElementalContext(FlaskContext(default_settings['cmsCoreContext']),
-                            MongoDbContext(default_settings['cmsDbContext']))
+def default_elemental_context(default_settings) -> ElementalContext:
+    return ElementalContext(FlaskContext(default_settings.get('cmsCoreContext', {})),
+                            MongoDbContext(default_settings.get('cmsDbContext', {})))
